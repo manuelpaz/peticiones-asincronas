@@ -19,6 +19,8 @@ function CharacterCard(props) {
 class App extends React.Component{
   //Se inicializa state
   state = {
+    loading: true,
+    error: null,
     data: {
       //Se inicializa results ya que si presenta un error de undefined
       results: [],
@@ -28,15 +30,26 @@ class App extends React.Component{
     this.fetchCharacters();      
   }
   fetchCharacters = async()=>{
-    const response = await fetch("https://rickandmortyapi.com/api/character");
-    const data = await response.json();
-
     this.setState({
-      data: data,
-
+      loading: true,
+      error: null,
     })
+    try{
+      const response = await fetch("https://rickandmortyapi.com/api/character");
+      const data = await response.json();
 
-  }
+      this.setState({
+        loading: false,
+        data: data,
+      })
+        
+    }catch(error){
+      this.setState({
+        loading: false,
+        error: error,
+      })
+    }
+  };
   render(){    
     return (
       <div className="container">
