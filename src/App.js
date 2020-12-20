@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './images/logo.png';
+import Loader from './components/Loader';
 //import data from './data.json'
 import "./styles.css";
 import './App.css';
@@ -42,7 +43,7 @@ class App extends React.Component{
         loading: false,
         data: data,
       })
-        
+
     }catch(error){
       this.setState({
         loading: false,
@@ -51,17 +52,18 @@ class App extends React.Component{
     }
   };
   render(){    
-    return (
-      <div className="container">
+    return (    
+      <div className="container"> 
           <div className="App">
-            <img className="Logo" src={logo} alt="Rick y Morty" />
+            <img className="Logo" src={logo} alt="Rick y Morty" />           
             <ul className="row">
               {this.state.data.results.map(character =>(
                   <li className="col-6 col-md-3" key={character.id}>
                          <CharacterCard character={character}/>        
                   </li>  
               ))}      
-            </ul>
+            </ul>   
+            {this.state.loading && <Loader/>}           
           </div>
         </div>
     );
