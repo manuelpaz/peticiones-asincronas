@@ -1,13 +1,13 @@
 *{
     box-sizing: border-box;
 }
+
 .loader-container{
     position: relative;
-    width: 60px;
-    height: 60px;    
+    width: 300px;
+    height: 300px;    
     display: table;
-    margin: 0 auto;
-    display: inline;
+    margin: 0 auto;   
 }
 .loader-container .loader{
     position: absolute;

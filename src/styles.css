@@ -56,6 +56,31 @@
       flex-basis: 25%;
     }
   }
+
+  .rejillaPersonajes {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: auto auto auto auto;
+    /*background-color: #2196F3;*/
+    padding: 10px;
+  }
+  
+  .personaje {
+    width: 100%;
+    height: 240px;
+    background: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+
+
+
   
   .CharacterCard {
     width: 100%;
