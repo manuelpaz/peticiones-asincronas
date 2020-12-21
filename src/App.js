@@ -10,7 +10,7 @@ function CharacterCard(props) {
     <div className="personaje">
         <div
           className="CharacterCard"
-          style={{ backgroundImage: `url(${character.image})` }}
+          style={{ backgroundImage: `url(${character.image})`}}          
         >
         <div className="CharacterCard__name-container text-truncate">
           {character.name}
@@ -59,8 +59,9 @@ class App extends React.Component{
           <div className="App">
             <img className="Logo" src={logo} alt="Rick y Morty" />           
             <div className="rejillaPersonajes">
-              {this.state.data.results.map(character =>(                  
-                  <CharacterCard character={character}/> 
+              {this.state.data.results.map(character =>( 
+                <li id={character.id} key={character.id} ><CharacterCard character={character}/> </li>                 
+                  
               ))}      
             </div>   
             {this.state.loading && <Loader/>}           
